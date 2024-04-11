@@ -1,23 +1,38 @@
-<div class="row mt-5">
+<div class="row mt-5 mb-5" *ngIf="taskList.length > 0; else noTasksMessage">
   <div class="col"></div>
 
-  <div class="col-4">
-    <h4>Tareas Pendientes</h4>
+
+  <div class="col-4 box w-25 mx-5">
+    <h4 class="text-white h4">Tareas Asignadas</h4>
     <div class="task" *ngFor="let task of taskList">
-      <input *ngIf="!task.check" type="text" id="input" value="{{task.name}}" />
-      <button *ngIf="!task.check" (click)="onCheckId(task.id)" class="btn btn-warning mx-4">Check</button>
-      <button *ngIf="!task.check" class="btn btn-danger" (click)="onDeleteId(task.id!)">Del</button>
+      <ng-container>
+        <input type="text" id="input" [(ngModel)]="task.name" (change)="onModifyId(task.id, task.name)" value="{{task.name}}">
+        <button (click)="onCheckId(task.id)" [ngClass]="task.check ? 'btn btn-outline-success mx-4 fa-solid fa-circle-check p-2' : 'btn btn-outline-warning mx-4 fa-solid fa-clock p-2'"></button>
+        <button class="btn btn-outline-danger fa-solid fa-trash-can p-2" (click)="onDeleteId(task.id!)"></button>
+      </ng-container>
     </div>
   </div>
 
-  <div class="col-1"></div>
+  <div class="col-4 box w-25 mx-5">
+    <h4 class="text-white h4">Tareas Pendientes</h4>
+    <div class="task " *ngFor="let task of taskList">
+      <ng-container *ngIf="!task.check">
+        <input type="text" id="input" [(ngModel)]="task.name" (change)="onModifyId(task.id, task.name)" value="{{task.name}}" />
+        <button (click)="onCheckId(task.id)" class="btn btn-outline-warning mx-4 fa-solid fa-clock p-2"></button>
+        <button class="btn btn-outline-danger fa-solid fa-trash-can p-2" (click)="onDeleteId(task.id!)"></button>
+      </ng-container>
+    </div>
+  </div>
 
-  <div class="col-4">
-    <h4>Tareas Completadas</h4>
-    <div  class="task" *ngFor="let task of taskList">
-      <input *ngIf="task.check" type="text" id="input" placeholder="Nombre de la tarea">
-      <button *ngIf="task.check" class="btn btn-success mx-4">Check</button>
-      <button *ngIf="task.check" class="btn btn-danger">Del</button>
+
+  <div class="col-4 box w-25 mx-5">
+    <h4 class="text-white h4">Tareas Completadas</h4>
+    <div class="task" *ngFor="let task of taskList">
+      <ng-container *ngIf="task.check">
+        <input type="text" id="input" [(ngModel)]="task.name" (change)="onModifyId(task.id, task.name)" value="{{task.name}}">
+        <button (click)="onCheckId(task.id)" class="btn btn-outline-success mx-4 fa-solid fa-circle-check p-2"></button>
+        <button class="btn btn-outline-danger fa-solid fa-trash-can p-2" (click)="onDeleteId(task.id!)"></button>
+      </ng-container>
     </div>
   </div>
 
@@ -25,3 +40,16 @@
 
 
 </div>
+
+
+<ng-template #noTasksMessage>
+  <div class="text-center mt-3 d-flex justify-content-center">
+    <div class="alert alert-danger w-50 " role="alert" *ngIf="taskList.length == 0">
+      No tienes tareas asignadas!
+    </div>
+  </div>
+</ng-template>
+
+
+
+

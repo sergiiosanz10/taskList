@@ -25,6 +25,9 @@ export class ListComponent {
   @Output()
   public onCheck: EventEmitter<string> = new EventEmitter();
 
+  @Output()
+  public onModify: EventEmitter<string> = new EventEmitter();
+
   onDeleteId(id:string):void{
     this.onDelete.emit(id);
   }
@@ -32,6 +35,11 @@ export class ListComponent {
   onCheckId(id: string | undefined):void{
     // this.onCheck.emit(id)
     this.taskService.check(id)
+  }
+
+  onModifyId(id:string | undefined , newName: string):void{
+
+    this.taskService.taskModify(id!, newName)
   }
 
 

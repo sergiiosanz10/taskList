@@ -24,6 +24,11 @@ export class MainPageComponent {
     this.taskService.check(id);
   }
 
+  modify(id: string, newName: string):void{
+
+    this.taskService.taskModify(id, newName);
+  }
+
   onNewTask(Task: Task){
     this.taskService.addTask( Task );
   }

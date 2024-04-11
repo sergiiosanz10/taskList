@@ -27,15 +27,31 @@ export class TaskService {
   }
 
   check(id: string | undefined): void {
-    console.log(id)
 
     const task = this.tasks.find((t: Task) => t.id === id);
 
-    if (task) {
+    if (task?.check === false) {
       task.check = true;
+    }else{
+      task!.check = false;
     }
 
-    localStorage.setItem('tasks', JSON.stringify(task));
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
+  }
+
+  taskModify(id : string, newName: string){
+
+    const taskModify = this.tasks.findIndex((t: Task) => t.id === id);
+
+    console.log({newName});
+
+
+
+    if (taskModify !== -1) {
+      this.tasks[taskModify].name = newName;
+    }
+
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
 
   deleteTaskById(id: string): void {
