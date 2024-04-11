@@ -4,7 +4,7 @@
   <div class="col-4">
     <h4>Tareas Pendientes</h4>
     <div class="task" *ngFor="let task of taskList">
-      <input *ngIf="!task.check" id="input" value="{{task.name}}" />
+      <input *ngIf="!task.check" type="text" id="input" value="{{task.name}}" />
       <button *ngIf="!task.check" (click)="onCheckId(task.id)" class="btn btn-warning mx-4">Check</button>
       <button *ngIf="!task.check" class="btn btn-danger" (click)="onDeleteId(task.id!)">Del</button>
     </div>
