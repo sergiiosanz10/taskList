@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Task } from '../../interfaces/task.interface';
+
 
 @Component({
   selector: 'app-add-task',
@@ -6,5 +8,22 @@ import { Component } from '@angular/core';
   styleUrl: './add-task.component.css'
 })
 export class AddTaskComponent {
+
+  @Output()
+  public onNewTask: EventEmitter<Task> = new EventEmitter();
+
+  public task: Task = { name: '', check: false}
+
+
+  emitTask():void{
+    if(this.task.name.length === 0) return;
+
+    this.onNewTask.emit(this.task)
+    console.log(this.task);
+
+    this.task = { name: '', check: false}
+
+
+  }
 
 }

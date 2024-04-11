@@ -4,10 +4,10 @@
       <h1 id="title">TaskList</h1>
     </div>
     <div class="col-12">
-      <app-add-task></app-add-task>
+      <app-add-task (onNewTask)="onNewTask($event)"></app-add-task>
     </div>
     <div class="col-12">
-      <app-list></app-list>
+      <app-list [taskList]="tasks" (onCheck)="check($event)" (onDelete)="onDeleteTask($event)"></app-list>
     </div>
   </div>
 </div>
