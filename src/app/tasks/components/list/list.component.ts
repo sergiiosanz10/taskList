@@ -42,5 +42,20 @@ export class ListComponent {
     this.taskService.taskModify(id!, newName)
   }
 
+  onDeleteAll(){
+    localStorage.clear();
+    location.reload()
+  }
+
+  onDeleteTaskPending():void{
+    this.taskService.tasks = this.taskService.tasks.filter(Task => Task.check === true)
+    localStorage.setItem('tasks', JSON.stringify(this.taskService.tasks));
+  }
+
+  onDeleteTaskCompleted():void{
+    this.taskService.tasks = this.taskService.tasks.filter(Task => Task.check === false)
+    localStorage.setItem('tasks', JSON.stringify(this.taskService.tasks));
+  }
+
 
 }
