@@ -40,4 +40,5 @@
 
 .btn-outline-warning:hover{
   color: white;
+  cursor: pointer;
 }

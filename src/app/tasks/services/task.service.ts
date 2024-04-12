@@ -22,6 +22,7 @@ export class TaskService {
 
   addTask(task: Task): void {
     const newTask: Task = { id: uuid(), ...task }
+
     this.tasks.push(newTask);
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
@@ -58,5 +59,4 @@ export class TaskService {
     this.tasks = this.tasks.filter(Task => Task.id !== id)
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
-
 }
