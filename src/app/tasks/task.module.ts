@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { ListComponent } from './components/list/list.component';
 import { MainPageComponent } from './pages/main-page.component';
-import { ListAllComponent } from './components/list-all/list-all.component';
+import { ListasignedComponent } from './components/list-asigned/list-asigned.component';
 import { ListPendingComponent } from './components/list-pending/list-pending.component';
 import { ListCompletedComponent } from './components/list-completed/list-completed.component';
 
@@ -16,7 +16,7 @@ import { ListCompletedComponent } from './components/list-completed/list-complet
     MainPageComponent,
     AddTaskComponent,
     ListComponent,
-    ListAllComponent,
+    ListasignedComponent,
     ListPendingComponent,
     ListCompletedComponent,
   ],

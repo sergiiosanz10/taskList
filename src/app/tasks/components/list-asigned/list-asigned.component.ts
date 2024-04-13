@@ -5,10 +5,10 @@ import { Task } from '../../interfaces/task.interface';
 
 @Component({
   selector: 'list-all',
-  templateUrl: './list-all.component.html',
-  styleUrl: './list-all.component.css'
+  templateUrl: './list-asigned.component.html',
+  styleUrl: './list-asigned.component.css'
 })
-export class ListAllComponent {
+export class ListasignedComponent {
   constructor(private taskService:TaskService){}
 
 
