@@ -1,5 +1,5 @@
 
-  <h4 class="text-white h4">Tareas Asignadas</h4>
+  <h4 class="h4">Tareas Asignadas</h4>
   <div class="task" *ngFor="let task of taskList">
     <ng-container>
       <input type="text" id="input" [(ngModel)]="task.name" (change)="onModifyId(task.id, task.name)" value="{{task.name}}">

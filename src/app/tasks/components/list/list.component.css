@@ -1,70 +1,50 @@
-#input{
-  margin-top: 20px;
-  width: 50%;
-  border: none;
-  border-bottom: 1px solid #ffffff;
-  border-radius: 0;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
-  transition: all 300ms;
-  -webkit-transition: all 300ms;
-  -moz-transition: all 300ms;
-  -ms-transition: all 300ms;
-  -o-transition: all 300ms;
-  background: none;
-  color: white;
+*{
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.box {
+  padding: 20px;
+  border: 1px solid #ffffff;
+  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.22), 1px 0px 0px 0px rgba(255, 255, 255, 0.22), 1px 2px 0px 0px rgba(255, 255, 255, 0.22), 2px 1px 0px 0px rgba(255, 255, 255, 0.22), 2px 3px 0px 0px rgba(255, 255, 255, 0.22), 3px 2px 0px 0px rgba(255, 255, 255, 0.22), 3px 4px 0px 0px rgba(255, 255, 255, 0.22), 4px 3px 0px 0px rgba(255, 255, 255, 0.22), 4px 5px 0px 0px rgba(255, 255, 255, 0.22), 5px 4px 0px 0px rgba(255, 255, 255, 0.22), 5px 6px 0px 0px rgba(255, 255, 255, 0.22), 6px 5px 0px 0px rgba(255, 255, 255, 0.22), 6px 7px 0px 0px rgba(255, 255, 255, 0.22), 7px 6px 0px 0px rgba(255, 255, 255, 0.22), 7px 8px 0px 0px rgba(255, 255, 255, 0.22), 8px 7px 0px 0px rgba(255, 255, 255, 0.22);
 }
 
 
+.task {
+  text-align: center;
 
-#input:focus{
-  transform: scale(1.05);
-  -webkit-transform: scale(1.05);
-  -moz-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  -o-transform: scale(1.05);
-  outline: none;
-}
-
-.h4{
-  border-bottom: 1px solid white;
-  padding-bottom: 15px;
-}
-
-.box{
-  padding-bottom: 20px;
- box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.22), 1px 0px 0px 0px rgba(255, 255, 255, 0.22), 1px 2px 0px 0px rgba(255, 255, 255, 0.22), 2px 1px 0px 0px rgba(255, 255, 255, 0.22), 2px 3px 0px 0px rgba(255, 255, 255, 0.22), 3px 2px 0px 0px rgba(255, 255, 255, 0.22), 3px 4px 0px 0px rgba(255, 255, 255, 0.22), 4px 3px 0px 0px rgba(255, 255, 255, 0.22), 4px 5px 0px 0px rgba(255, 255, 255, 0.22), 5px 4px 0px 0px rgba(255, 255, 255, 0.22), 5px 6px 0px 0px rgba(255, 255, 255, 0.22), 6px 5px 0px 0px rgba(255, 255, 255, 0.22), 6px 7px 0px 0px rgba(255, 255, 255, 0.22), 7px 6px 0px 0px rgba(255, 255, 255, 0.22), 7px 8px 0px 0px rgba(255, 255, 255, 0.22), 8px 7px 0px 0px rgba(255, 255, 255, 0.22);
-}
-
-.btn:hover{
-  background: none;
-  cursor: pointer;
-  transform: scale(1.3);
-  -webkit-transform: scale(1.3);
-  -moz-transform: scale(1.3);
-  -ms-transform: scale(1.3);
-  -o-transform: scale(1.3);
-}
-
-.btn{
-  border: none;
-}
-
-.btn-outline-warning:hover{
-  color: #FFC107;
-}
-.btn-outline-success:hover{
-  color: #198754;
-}
-.btn-outline-danger:hover{
-  color: #DC3545;
-}
-
-.clear{
-  display: flex;
-  margin: 0 auto;
 }
 
 
+.task {
+  background: #fff;
+  box-shadow: 4px 4px 0 #00486B;
+  background-image:
+    linear-gradient(
+      90deg,
+      #fff 12px, transparent 0,
+      #2D3142 15px, transparent 0,
+      #2D3142 20px, transparent 0,
+      #fff 100%
+    ),
+    radial-gradient(
+      circle closest-side,
+      rgba(255,255,255,0) 88%,
+      #fff 100%
+    ),
+    radial-gradient(
+      circle at 22px 8px,
+      #2D3142 40%,
+      #2D3142 40%,
+      #2D3142 100%
+    );
+  background-size: 32px 8px, 32px 16px, 32px 16px;
+  background-repeat: space no-repeat;
+  background-position: center top, center 6px, center 6px;
+  text-align: center;
+}
+
+.task--alt {
+  background-image: linear-gradient(90deg, #fff 12px, transparent 0, #2D3142 15px, transparent 0 ,#2D3142 20px, transparent 0,#fff 100%),radial-gradient(circle closest-side,rgba(255,255,255,0) 88%,#fff 100%),radial-gradient(circle at 22px 8px,#2D3142 40%,#2D3142 40%,#2D3142 100%);
+  background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 21'%3E%3Cpath d='M20 0h-7v6.9a7.5 7.5 0 107 0V0z' fill='%231373A9'/%3E%3Cpath d='M13 0h3v6.9a7.5 7.5 0 002 14 7.5 7.5 0 01-9-7.4c0-2.9 1.6-5.4 4-6.6V0z' fill='%2300486B'/%3E%3C/svg%3E");
+  background-size: 2em 1.3125em;
+}
