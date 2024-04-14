@@ -1,50 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 *{
-  font-family: 'Shadows Into Light', cursive;
+  font-family: "Indie Flower", cursive;
 }
 
 .box {
   padding: 20px;
-  border: 1px solid #ffffff;
-  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.22), 1px 0px 0px 0px rgba(255, 255, 255, 0.22), 1px 2px 0px 0px rgba(255, 255, 255, 0.22), 2px 1px 0px 0px rgba(255, 255, 255, 0.22), 2px 3px 0px 0px rgba(255, 255, 255, 0.22), 3px 2px 0px 0px rgba(255, 255, 255, 0.22), 3px 4px 0px 0px rgba(255, 255, 255, 0.22), 4px 3px 0px 0px rgba(255, 255, 255, 0.22), 4px 5px 0px 0px rgba(255, 255, 255, 0.22), 5px 4px 0px 0px rgba(255, 255, 255, 0.22), 5px 6px 0px 0px rgba(255, 255, 255, 0.22), 6px 5px 0px 0px rgba(255, 255, 255, 0.22), 6px 7px 0px 0px rgba(255, 255, 255, 0.22), 7px 6px 0px 0px rgba(255, 255, 255, 0.22), 7px 8px 0px 0px rgba(255, 255, 255, 0.22), 8px 7px 0px 0px rgba(255, 255, 255, 0.22);
-}
-
-
-.task {
   text-align: center;
 
-}
-
-
-.task {
   background: #fff;
-  box-shadow: 4px 4px 0 #00486B;
-  background-image:
-    linear-gradient(
-      90deg,
-      #fff 12px, transparent 0,
-      #2D3142 15px, transparent 0,
-      #2D3142 20px, transparent 0,
-      #fff 100%
-    ),
-    radial-gradient(
-      circle closest-side,
-      rgba(255,255,255,0) 88%,
-      #fff 100%
-    ),
-    radial-gradient(
-      circle at 22px 8px,
-      #2D3142 40%,
-      #2D3142 40%,
-      #2D3142 100%
-    );
+  box-shadow: 5px 5px 0 #d4d4d4;
+  border-radius: 5px;
+  background-image:    linear-gradient(      90deg,      #fff 12px, transparent 0,      #2D3142 15px, transparent 0,      #2D3142 20px, transparent 0,      #fff 100%    ),    radial-gradient(      circle closest-side,      rgba(255,255,255,0) 88%,      #fff 100%    ),    radial-gradient(      circle at 22px 8px,      #2D3142 40%,      #2D3142 40%,      #2D3142 100%    );
   background-size: 32px 8px, 32px 16px, 32px 16px;
   background-repeat: space no-repeat;
   background-position: center top, center 6px, center 6px;
   text-align: center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 .task--alt {
   background-image: linear-gradient(90deg, #fff 12px, transparent 0, #2D3142 15px, transparent 0 ,#2D3142 20px, transparent 0,#fff 100%),radial-gradient(circle closest-side,rgba(255,255,255,0) 88%,#fff 100%),radial-gradient(circle at 22px 8px,#2D3142 40%,#2D3142 40%,#2D3142 100%);
-  background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 21'%3E%3Cpath d='M20 0h-7v6.9a7.5 7.5 0 107 0V0z' fill='%231373A9'/%3E%3Cpath d='M13 0h3v6.9a7.5 7.5 0 002 14 7.5 7.5 0 01-9-7.4c0-2.9 1.6-5.4 4-6.6V0z' fill='%2300486B'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 21'%3E%3Cpath d='M20 0h-7v6.9a7.5 7.5 0 107 0V0z' fill='%232D3142'/%3E%3Cpath d='M13 0h3v6.9a7.5 7.5 0 002 14 7.5 7.5 0 01-9-7.4c0-2.9 1.6-5.4 4-6.6V0z' fill='%232D3142'/%3E%3C/svg%3E");
   background-size: 2em 1.3125em;
 }
+
+@media (max-width: 1151px) {
+  .col-sm-6, .col-lg-4 {
+    flex: 0 0 90%;
+    margin-bottom: 35px;
+    max-width: 100%;
+  }
+}
+
+
+

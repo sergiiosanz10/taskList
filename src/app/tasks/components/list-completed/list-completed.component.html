@@ -4,7 +4,7 @@
     <ng-container *ngIf="task.check">
       <input type="text" id="input" [(ngModel)]="task.name" (change)="onModifyId(task.id, task.name)"
         value="{{task.name}}">
-      <button (click)="onCheckId(task.id)" class="btn btn-outline-success mx-4 fa-solid fa-circle-check p-2"></button>
+      <button (click)="onCheckId(task.id)" class="btn btn-outline-success mx-4 fa-solid fa-check p-2"></button>
       <button class="btn btn-outline-danger fa-solid fa-x p-2" (click)="onDeleteId(task.id!)"></button>
     </ng-container>
   </div>

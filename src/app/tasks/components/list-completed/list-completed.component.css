@@ -15,6 +15,7 @@
   -o-transition: all 300ms;
   background: none;
   color: black;
+  font-size: 1.4em;
 }
 
 
@@ -54,6 +55,7 @@
 
 .btn {
   border: none;
+  font-size: 1.2em;
 }
 
 .btn-outline-warning:hover {

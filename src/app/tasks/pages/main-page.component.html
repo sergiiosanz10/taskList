@@ -7,7 +7,7 @@
     <div class="col-12">
       <app-add-task (onNewTask)="onNewTask($event)"></app-add-task>
     </div>
-    <div class="col-12">
+    <div class="col-12 ">
       <app-list [taskList]="tasks" (onCheck)="check($event)" (onModify)="modify($event, $event )" (onDelete)="onDeleteTask($event)"></app-list>
     </div>
   </div>

@@ -1,14 +1,14 @@
-<div class="row mt-5 mb-5 justify-content-center" *ngIf="taskList.length > 0; else noTasksMessage" >
 
+<div class="row mt-5 mb-5 justify-content-center " *ngIf="taskList.length > 0; else noTasksMessage" >
 
   <!-- Listar tareas Asignadas (Todas) -->
-  <list-all class="col-4 col-xs-12 box w-25 mx-5 task" [taskList]="tasks" ></list-all>
+  <list-all class="col-4 col-sm-6  col-lg-4 box w-25 mx-5 task--alt" [taskList]="tasks" ></list-all>
 
   <!-- Listar tareas Pendientes  -->
-  <list-pending class="col-4 box w-25 mx-5 task" [taskList]="tasks"></list-pending>
+  <list-pending class="col-4 col-sm-6 col-lg-4 box w-25 mx-5  task--alt" [taskList]="tasks"></list-pending>
 
   <!-- Listar tareas Completadas -->
-  <list-completed class="col-4 box w-25 mx-5 task"  [taskList]="tasks"></list-completed>
+  <list-completed class="col-4 col-sm-6 col-lg-4 box w-25 mx-5  task--alt"  [taskList]="tasks"></list-completed>
 
 
 </div>
@@ -16,12 +16,8 @@
 
 <ng-template #noTasksMessage>
   <div class="text-center mt-3 d-flex justify-content-center">
-    <div class="alert alert-danger w-50 " role="alert" *ngIf="taskList.length == 0">
+    <div class="alert alert-danger w-50 fs-5" role="alert" *ngIf="taskList.length == 0">
       No tienes tareas asignadas!
     </div>
   </div>
 </ng-template>
-
-
-
-
