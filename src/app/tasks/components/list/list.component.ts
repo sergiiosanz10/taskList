@@ -17,10 +17,10 @@ export class ListComponent {
   faTrashCan = faTrashCan;
 
 
-  @Input ()
+  @Input()
   public taskList: Task[] = [];
 
-  @Input ()
+  @Input()
   public taskType: number | undefined
 
 
@@ -36,7 +36,7 @@ export class ListComponent {
   @Output()
   public onTaskType: EventEmitter<number> = new EventEmitter()
 
-  constructor(private taskService:TaskService){}
+  constructor(private taskService: TaskService) { }
   isAll: boolean = false;
   isPending: boolean = false;
   isCompleted: boolean = false;
@@ -68,7 +68,7 @@ export class ListComponent {
   }
 
 
-  get tasks(): Task[]{
+  get tasks(): Task[] {
     return this.taskService.tasks;
   }
 
@@ -84,7 +84,7 @@ export class ListComponent {
     this.taskService.check(id)
   }
 
-  onBlockId(id: string) :void{
+  onBlockId(id: string): void {
     this.taskService.block(id)
   }
 
@@ -93,11 +93,25 @@ export class ListComponent {
     this.taskService.taskModify(id!, newName)
   }
 
-  onDeleteAll() {
+  onDeleteAll(): void {
     localStorage.clear();
     location.reload()
   }
 
+  onDeleteCompleted(): void {
+    this.taskService.tasks = this.tasks.filter(task => !task.check);
+    localStorage.setItem('tasks', JSON.stringify(this.taskService.tasks));
+  }
+
+  onDeletePending(): void {
+    this.taskService.tasks = this.tasks.filter(task => task.check);
+    localStorage.setItem('tasks', JSON.stringify(this.taskService.tasks));
+  }
+
+  onDeleteBlocked(): void {
+    this.taskService.tasks = this.tasks.filter(task => !task.isBlocked);
+    localStorage.setItem('tasks', JSON.stringify(this.taskService.tasks));
+  }
 
 
 }

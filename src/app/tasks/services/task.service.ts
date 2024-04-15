@@ -75,19 +75,4 @@ export class TaskService {
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
 
-  // getTaskTypes(): taskType[] {
-  //   return [
-  //     {
-  //       type: 1
-  //     },
-  //     {
-  //       type:2
-  //     },
-  //     {
-  //       type: 3
-  //     }
-  //   ]
-  // }
-
-
 }
