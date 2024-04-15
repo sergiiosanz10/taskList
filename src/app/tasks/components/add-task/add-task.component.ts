@@ -12,7 +12,7 @@ export class AddTaskComponent {
   @Output()
   public onNewTask: EventEmitter<Task> = new EventEmitter();
 
-  public task: Task = { name: '', check: false}
+  public task: Task = { name: '', check: false, isBlocked: false}
 
 
   emitTask():void{
@@ -21,7 +21,7 @@ export class AddTaskComponent {
     this.onNewTask.emit(this.task)
     console.log(this.task);
 
-    this.task = { name: '', check: false}
+    this.task = { name: '', check: false, isBlocked: false}
 
 
   }

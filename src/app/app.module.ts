@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TaskModule } from './tasks/task.module';
@@ -13,7 +14,7 @@ import { TaskModule } from './tasks/task.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TaskModule
+    TaskModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

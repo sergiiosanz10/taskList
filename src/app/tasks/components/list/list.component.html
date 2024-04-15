@@ -1,17 +1,42 @@
+<div class="row mt-5 mb-5 justify-content-center " *ngIf="taskList.length > 0; else noTasksMessage">
 
-<div class="row mt-5 mb-5 justify-content-center " *ngIf="taskList.length > 0; else noTasksMessage" >
+  <div class="row">
 
-  <!-- Listar tareas Asignadas (Todas) -->
-  <list-all class="col-4 col-sm-6  col-lg-4 box w-25 mx-5 task--alt" [taskList]="tasks" ></list-all>
+    <div class="col-4 col-sm-6  col-lg-4 box w-25 mx-5 task--alt w-75">
 
-  <!-- Listar tareas Pendientes  -->
-  <list-pending class="col-4 col-sm-6 col-lg-4 box w-25 mx-5  task--alt" [taskList]="tasks"></list-pending>
+      <h4 class="h4" *ngIf="isAll">Tareas Asignadas</h4>
+      <h4 class="h4" *ngIf="isPending">Tareas Pendientes</h4>
+      <h4 class="h4" *ngIf="isCompleted">Tareas Completadas</h4>
+      <h4 class="h4" *ngIf="isBlocked">Tareas Bloqueadas</h4>
 
-  <!-- Listar tareas Completadas -->
-  <list-completed class="col-4 col-sm-6 col-lg-4 box w-25 mx-5  task--alt"  [taskList]="tasks"></list-completed>
+      <div class="task " *ngFor="let task of taskList">
+
+        <ng-container *ngIf=" isAll || isCompleted && task.check  || isPending && !task.check ||  isBlocked && task.isBlocked">
+          <input type="text" id="input" [(ngModel)]="task.name" (change)="onModifyId(task.id, task.name)"
+            value="{{task.name}}">
+          <button (click)="onCheckId(task.id)" class="btn">
+            <fa-icon *ngIf="task.check" [icon]="faCheck" class="btn  btn-outline-success"></fa-icon>
+            <fa-icon *ngIf="!task.check" [icon]="faClock" class="btn  btn-outline-warning"></fa-icon>
+          </button>
+
+          <button (click)="onBlockId(task.id!)" class="btn">
+            <fa-icon *ngIf="task.isBlocked" [icon]="faLock" class="btn  btn-outline-success"></fa-icon>
+            <fa-icon *ngIf="!task.isBlocked" [icon]="faLockOpen" class="btn  btn-outline-primary"></fa-icon>
+          </button>
+
+          <button class="btn btn-outline-danger fa-solid fa-x p-2 btnClearById" (click)="onDeleteId(task.id!)"></button>
+        </ng-container>
+
+      </div>
+      <button class="btn btn-outline-danger p-2 mt-4 clear" (click)="onDeleteAll()"><fa-icon  [icon]="faTrashCan"></fa-icon></button>
+
+    </div>
 
 
+
+  </div>
 </div>
+
 
 
 <ng-template #noTasksMessage>

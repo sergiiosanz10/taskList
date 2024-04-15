@@ -1,6 +1,7 @@
-import { Component} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TaskService } from '../services/task.service';
 import { Task } from '../interfaces/task.interface';
+import { taskType } from '../interfaces/taskType.interface';
 
 
 @Component({
@@ -10,28 +11,38 @@ import { Task } from '../interfaces/task.interface';
 })
 export class MainPageComponent {
 
-  constructor( private  taskService: TaskService){}
+  constructor(private taskService: TaskService) {
 
-  get tasks(): Task[]{
+    this.taskTypes = [taskType.Todas, taskType.Completadas, taskType.Pendientes, taskType.Bloqueadas ]
+
+  }
+
+  get tasks(): Task[] {
     return this.taskService.tasks;
   }
 
-  onDeleteTask(id: string):void{
-    this.taskService.deleteTaskById(id );
+
+  // @Input()
+  // taskTypes: number[]
+
+  @Input()
+  taskTypes: taskType[]
+
+
+  onDeleteTask(id: string): void {
+    this.taskService.deleteTaskById(id);
   }
 
-  check(id: string):void{
+  check(id: string): void {
     this.taskService.check(id);
   }
 
-  modify(id: string, newName: string):void{
-
+  modify(id: string, newName: string): void {
     this.taskService.taskModify(id, newName);
   }
 
-  onNewTask(Task: Task){
-    this.taskService.addTask( Task );
+  onNewTask(Task: Task) {
+    this.taskService.addTask(Task);
   }
-
 
 }
