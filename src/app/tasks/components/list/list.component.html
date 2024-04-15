@@ -1,15 +1,14 @@
-<div class="row mt-5 mb-5 justify-content-center " *ngIf="taskList.length > 0; else noTasksMessage">
+<div class="row mt-3 mb-5 justify-content-center  " *ngIf="taskList.length > 0; else noTasksMessage">
 
-  <div class="row">
 
-    <div class="col-4 col-sm-6  col-lg-4 box w-25 mx-5 task--alt w-75">
+    <div class="col-12 box task--alt ">
 
       <h4 class="h4" *ngIf="isAll">Tareas Asignadas</h4>
       <h4 class="h4" *ngIf="isPending">Tareas Pendientes</h4>
       <h4 class="h4" *ngIf="isCompleted">Tareas Completadas</h4>
       <h4 class="h4" *ngIf="isBlocked">Tareas Bloqueadas</h4>
 
-      <div class="task " *ngFor="let task of taskList">
+      <div class="task" *ngFor="let task of taskList">
 
         <ng-container *ngIf=" isAll || isCompleted && task.check  || isPending && !task.check ||  isBlocked && task.isBlocked">
           <input type="text" id="input" [(ngModel)]="task.name" (change)="onModifyId(task.id, task.name)"
@@ -34,7 +33,6 @@
 
 
 
-  </div>
 </div>
 
 

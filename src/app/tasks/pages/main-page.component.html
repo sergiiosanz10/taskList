@@ -1,5 +1,5 @@
-<div class="container-fluid">
-  <div class="row">
+<div class="container-fluid ">
+  <div class="row justify-content-center align-items-start ">
     <div class="col-12 title text-light" id="header">
       <h1 id="title">TaskList</h1>
     </div>
@@ -7,7 +7,7 @@
     <div class="col-12">
       <app-add-task (onNewTask)="onNewTask($event)"></app-add-task>
     </div>
-    <div class="col-12 " *ngFor="let type of taskTypes">
+    <div class="col-5 mx-5  " *ngFor="let type of taskTypes">
       <app-list [taskList]="tasks" [taskType]="type" (onCheck)="check($event)" (onModify)="modify($event, $event )" (onDelete)="onDeleteTask($event)"></app-list>
     </div>
 

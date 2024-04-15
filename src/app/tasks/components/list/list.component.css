@@ -123,12 +123,11 @@
 }
 
 @media (max-width: 1151px) {
-  .col-sm-6, .col-lg-4 {
-    flex: 0 0 90%;
+  .col-12 {
+    flex: 0 0 100%;
     margin-bottom: 35px;
     max-width: 100%;
   }
 }
-
 
 
