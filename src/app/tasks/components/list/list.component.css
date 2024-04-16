@@ -1,4 +1,7 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+*{
+  font-family: "Indie Flower", cursive;
+}
 
 .box {
   padding: 20px;
@@ -24,7 +27,7 @@
   background-size: 2em 1.3125em;
 }
 
-#input {
+#input, #blocked {
   margin-top: 20px;
   width: 50%;
   border: none;
@@ -42,6 +45,7 @@
   background: none;
   color: black;
   font-size: 1.4em;
+  outline: none;
 }
 
 
