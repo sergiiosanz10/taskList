@@ -1,4 +1,4 @@
-<div class="row mt-3 mb-5 justify-content-center  " *ngIf="taskList.length > 0; else noTasksMessage">
+<div class="row mt-3 mb-5 justify-content-center  ">
 
 
     <div class="col-12 box task--alt ">
@@ -39,10 +39,4 @@
 
 
 
-<ng-template #noTasksMessage>
-  <div class="text-center mt-3 d-flex justify-content-center">
-    <div class="alert alert-danger w-50 fs-5" role="alert" *ngIf="taskList.length == 0">
-      No tienes tareas asignadas!
-    </div>
-  </div>
-</ng-template>
+
