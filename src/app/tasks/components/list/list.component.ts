@@ -10,12 +10,6 @@ import { faCheck, faClock, faLock, faLockOpen, faTrashCan } from '@fortawesome/f
   styleUrl: './list.component.css',
 })
 export class ListComponent {
-  faCheck = faCheck;
-  faClock = faClock;
-  faLock = faLock;
-  faLockOpen = faLockOpen;
-  faTrashCan = faTrashCan;
-
 
   @Input()
   public taskList: Task[] = [];
@@ -35,6 +29,15 @@ export class ListComponent {
 
   @Output()
   public onTaskType: EventEmitter<number> = new EventEmitter()
+
+  // ICONOS
+  faCheck = faCheck;
+  faClock = faClock;
+  faLock = faLock;
+  faLockOpen = faLockOpen;
+  faTrashCan = faTrashCan;
+
+
 
   constructor(private taskService: TaskService) { }
   isAll: boolean = false;
